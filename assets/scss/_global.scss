@@ -1,0 +1,88 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+figure {
+	margin-bottom: 0;
+}
+
+html.menu-open,
+html.menu-open body {
+	overflow: hidden;
+}
+
+body.has-smooth-scroll {
+	#smooth-wrapper {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	#smooth-content {
+		overflow: visible;
+		width: 100%;
+	}
+
+	&.admin-bar {
+		#main-header {
+			top: 0;
+
+			& + main {
+				margin-top: 0;
+			}
+
+			.main-menu {
+				top: 0;
+			}
+		}
+	}
+}
+
+.menu-backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	width: 100%;
+	height: 100vh;
+	height: 100dvh;
+	background-color: rgba($black, 0.2);
+	-webkit-backdrop-filter: blur(32px);
+	backdrop-filter: blur(32px);
+	visibility: hidden;
+}
+
+.admin-bar .menu-backdrop {
+	top: var(--wp-admin--admin-bar--height);
+	height: calc(100vh - var(--wp-admin--admin-bar--height));
+	height: calc(100dvh - var(--wp-admin--admin-bar--height));
+}
+
+body.has-smooth-scroll.admin-bar .menu-backdrop {
+	top: 0;
+	height: 100vh;
+	height: 100dvh;
+}
+
+.pin-spacer:has(#main-header) {
+	z-index: 100;
+}

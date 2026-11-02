@@ -1,0 +1,43 @@
+<?php
+/**
+ * Template Name: Posts Page
+ */
+
+get_header();
+
+if (post_password_required()) :
+
+	get_template_part('partials/password_protected/password_form');
+
+else :
+
+	if ( have_posts() ) while ( have_posts() ) : the_post();
+	$page_title				= get_the_title();
+	$background_colour		= get_field('background_colour');
+
+	switch($background_colour) {
+		case 'white':
+			$tile_colour	= 'grey';
+			break;
+		default:
+			$tile_colour	= 'white';
+	}
+	?>
+
+	<article id="post-<?php the_ID(); ?>" <?php post_class(sanitize_title($page_title)); ?>>
+
+		<?php 
+		get_template_part('partials/posts_page/page_header');
+		
+		endwhile; // Close the original loop
+		
+		get_template_part('partials/posts_page/page_content');
+		?>
+
+	</article>
+
+<?php 
+endif;
+
+get_footer();
+?>

@@ -1,0 +1,265 @@
+/* Header */
+
+#main-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	padding-top: 28px;
+	padding-bottom: 28px;
+
+	.admin-bar & {
+		top: var(--wp-admin--admin-bar--height);
+
+		& + main {
+			margin-top: var(--wp-admin--admin-bar--height);
+		}
+
+		.main-menu {
+			top: var(--wp-admin--admin-bar--height);
+		}
+	}
+
+	.inner-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		z-index: 2;
+		min-height: 40px;
+	}
+
+	.nav-wrapper,
+	.button-wrapper {
+		position: relative;
+		z-index: 1;
+		flex: 0 0 auto;
+	}
+
+	.nav-wrapper {
+		@include media-breakpoint-down(md) {
+			order: 2;
+		}
+	}
+
+	.logo-wrapper {
+		@include media-breakpoint-up(md) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: min(478px, calc(100% - 9rem));
+			transform: translate(-50%, -50%);
+		}
+		@include media-breakpoint-down(md) {
+			max-width: 75%;
+			order: 1;
+		}
+	}
+
+	.button-wrapper {
+		text-align: right;
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+
+	.navbar-toggle {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 5px;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		color: $black;
+		cursor: pointer;
+	}
+
+	.navbar-toggle-text {
+		display: none;
+		font-family: $standard-font;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.33;
+		letter-spacing: 0.3px;
+		text-align: left;
+		text-transform: uppercase;
+
+		@include media-breakpoint-up(md) {
+			display: block;
+		}
+	}
+
+	.icon-bar {
+		display: block;
+		width: 22px;
+		height: 2px;
+		background-color: $brown;
+		transition: transform 300ms ease, opacity 300ms ease, background-color 300ms ease;
+
+		@include media-breakpoint-up(md) {
+			display: none;
+		}
+	}
+
+	.main-menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: auto;
+		background-color: $brown;
+		visibility: hidden;
+
+		.container-fluid {
+			padding-top: 140px;
+			padding-bottom: 48px;
+		}
+
+		.menu,
+		.social-links {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-align: left;
+
+			@include media-breakpoint-down(md) {
+				text-align: right;
+			}
+
+			> li {
+				> a {
+					position: relative;
+					display: inline-block;
+					transition: all 300ms ease;
+					&:hover {
+						transform: translateX(10px);
+
+						@include media-breakpoint-down(md) {
+							transform: translateX(-10px);
+						}
+					}
+				}
+			}
+		}
+
+		.menu {
+			> li {
+				> a {
+					color: #fff;
+					font-family: $heading-font;
+					font-size: 40px;
+					font-weight: 400;
+					line-height: 1.25;
+
+					@include media-breakpoint-down(md) {
+						font-size: 28px;
+					}
+				}
+			}
+
+			li + li {
+				margin-top: 10px;
+			}
+		}
+
+		.social-links {
+			display: block;
+			margin-top: 30px;
+
+			li,
+			a {
+				display: block;
+			}
+
+			li + li {
+				margin-top: 10px;
+			}
+
+			a {
+				color: #fff;
+				font-family: $standard-font;
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 1.33;
+				letter-spacing: 0.3px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&.is-open {
+		.navbar-toggle,
+		.button-wrapper .btn {
+			color: #fff;
+		}
+
+		.icon-bar {
+			background-color: #fff;
+
+			&:nth-child(2) {
+				transform: translateY(7px) rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				opacity: 0;
+			}
+
+			&:nth-child(4) {
+				transform: translateY(-7px) rotate(-45deg);
+			}
+		}
+
+		.button-wrapper .btn {
+			border-color: #fff;
+		}
+
+		.logo svg path {
+			fill: #fff;
+		}
+
+		.main-menu {
+			visibility: visible;
+		}
+	}
+
+	.logo {
+		display: block;
+
+		svg {
+			display: block;
+			width: 100%;
+			height: 40px;
+		}
+	}
+}
+
+body:has(.sub-hero-banner) #main-header {
+	.navbar-toggle {
+		color: #fff;
+	}
+
+	.icon-bar {
+		background-color: #fff;
+	}
+
+	.button-wrapper .btn {
+		color: #fff;
+		border-color: #fff;
+
+		&:hover {
+			color: $black;
+		}
+
+		&::before {
+			background-color: $white;
+		}
+	}
+
+	.logo svg path {
+		fill: #fff;
+	}
+}

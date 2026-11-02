@@ -1,0 +1,111 @@
+/* Split Text and Image */
+
+.split-text-and-image {
+	margin-top: 80px;
+	margin-bottom: 48px;
+
+	@include media-breakpoint-up(lg) {
+		margin-top: 180px;
+		margin-bottom: 90px;
+	}
+
+	.col-left {
+		padding-top: 155px;
+
+		@include media-breakpoint-down(xxxl) {
+			padding-top: 100px;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			padding-top: 90px;
+		}
+
+		@include media-breakpoint-down(xl) {
+			padding-top: 60px;
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding-top: 0;
+		}
+	}
+
+	.col-right {
+		@include media-breakpoint-up(lg) {
+			margin-left: auto;
+		}
+	}
+
+	&__heading {
+		font-size: 40px;
+		margin-bottom: 50px;
+	}
+
+	&__copy {
+		max-width: 722px;
+		font-size: 20px;
+		line-height: 1.5;
+
+		p {
+			margin: 0;
+
+			& + p {
+				margin-top: 20px;
+			}
+		}
+	}
+
+	&__media {
+		margin-top: 40px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 0;
+		}
+	}
+
+	&__frame {
+		display: flex;
+		justify-content: flex-end;
+		
+	}
+
+	&__image {
+		position: relative;
+		max-width: 70%;
+
+		@include media-breakpoint-down(xxxl) {
+			max-width: 60%;
+		}
+
+		@include media-breakpoint-down(xxl) {
+			max-width: unset;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+
+		> img {
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+			}
+		}
+	}
+
+	&__stamp {
+		position: absolute;
+    right: calc(100% - 35px);
+    bottom: -80px;
+
+		@include media-breakpoint-down(xxl) {
+			position: relative;
+			right: auto;
+			bottom: auto;
+			margin-bottom: 30px;
+		}
+
+		img {
+			max-width: unset;
+			@include media-breakpoint-down(xxl) {
+				margin-left: auto;
+			}
+		}
+	}
+}

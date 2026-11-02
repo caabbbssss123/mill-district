@@ -1,0 +1,360 @@
+/* Contact Section */
+
+.contact-section {
+	margin-top: 100px;
+	margin-bottom: 150px;
+	color: $black;
+
+	&__inner {
+		padding-top: 25px;
+		border-top: 1px solid $light-brown;
+	}
+
+	.row {
+		align-items: flex-start;
+
+		> [class*='col-'] + [class*='col-'] {
+			margin-top: 40px;
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__heading {
+		margin: 0;
+		color: $brown;
+		font-family: $standard-font;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.33;
+		letter-spacing: 0.3px;
+		text-transform: uppercase;
+	}
+
+	&__form-heading {
+		max-width: 680px;
+		margin: 0;
+		color: $black;
+		font-family: $standard-font;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.4;
+	}
+
+	&__form {
+		margin-top: 40px;
+		color: $black;
+	}
+
+	&__form-description {
+		margin: 15px 0 0;
+		color: $black;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+
+	&__image img {
+		width: 100%;
+	}
+
+	.gform_wrapper,
+	.gform_heading,
+	.gform_body,
+	.gform_footer,
+	.gform_fields,
+	.gform_validation_errors {
+		margin: 0;
+	}
+
+	.gform_heading,
+	.gform_required_legend,
+	.gform_validation_container,
+	.gfield_visibility_hidden,
+	.gfield--type-honeypot,
+	.gform_hidden,
+	.hidden_sub_label,
+	.screen-reader-text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.gform_fields {
+		padding: 0;
+		list-style: none;
+		border-top: 1px solid $light-brown;
+	}
+
+	.gfield {
+		margin: 0;
+		padding: 0;
+	}
+
+	.gfield--type-text,
+	.gfield--type-email,
+	.gfield--type-phone,
+	.gfield--type-number,
+	.gfield--type-website,
+	.gfield--type-textarea,
+	.gfield--type-select,
+	.gfield--type-name,
+	.gfield--type-address {
+		display: grid;
+		grid-template-columns: fit-content(280px) minmax(0, 1fr);
+		column-gap: 30px;
+		padding: 17px 0;
+		border-bottom: 1px solid $light-brown;
+
+		@media (max-width: 699px) {
+			grid-template-columns: 1fr;
+			row-gap: 4px;
+		}
+	}
+
+	.gfield_label {
+		width: 280px;
+		margin: 0;
+		padding: 0;
+		color: $black;
+		font-family: $standard-font;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.66;
+		letter-spacing: 0.24px;
+		text-transform: uppercase;
+	}
+
+	.gfield_required {
+		display: none;
+	}
+
+	fieldset.gfield {
+		width: 100%;
+		min-width: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	.ginput_container {
+		width: 100%;
+		min-width: 0;
+	}
+
+	.ginput_container input,
+	.ginput_container textarea,
+	.ginput_container select {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		box-shadow: none;
+		color: $black;
+		font-family: $standard-font;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.66;
+		letter-spacing: 0.24px;
+		text-align: left;
+		text-transform: uppercase;
+		outline: none;
+		appearance: none;
+
+		&::placeholder {
+			color: $light-brown;
+			opacity: 1;
+			text-transform: uppercase;
+		}
+	}
+
+	.ginput_container textarea {
+		display: block;
+		height: 55px;
+		min-height: 0;
+		resize: none;
+		overflow: hidden;
+	}
+
+	.gfield_description,
+	.gfield_validation_message,
+	.validation_message {
+		display: none;
+	}
+
+	.gfield_error {
+		border-bottom-color: $red;
+	}
+
+	fieldset.gfield--type-radio,
+	fieldset.gfield--type-checkbox,
+	.gfield--type-consent {
+		display: block;
+		width: 100%;
+		padding: 17px 0 0;
+		border: 0;
+
+		> .gfield_label {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
+		}
+
+		.ginput_container,
+		.gfield_checkbox,
+		.gfield_radio,
+		.gchoice,
+		.ginput_container_consent {
+			width: 100%;
+		}
+
+		.ginput_container {
+			padding-bottom: 17px;
+		}
+	}
+
+	.gfield_radio,
+	.gfield_checkbox {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.gchoice,
+	.ginput_container_consent {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.gchoice label,
+	.gfield_consent_label {
+		margin: 0;
+		padding: 0;
+		color: $black;
+		font-family: $standard-font;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.66;
+		letter-spacing: 0.24px;
+		text-transform: none;
+	}
+
+	.gchoice input[type='radio'],
+	.gchoice input[type='checkbox'],
+	.ginput_container_consent input[type='checkbox'] {
+		flex: 0 0 auto;
+		width: 14px;
+		height: 14px;
+		margin: 0;
+		padding: 0;
+		border: 1px solid $light-brown;
+		border-radius: 50%;
+		background: transparent;
+		box-shadow: none;
+		color: $black;
+		font-size: 12px;
+		line-height: 1;
+		letter-spacing: 0;
+		text-align: left;
+		text-transform: none;
+		appearance: none;
+		cursor: pointer;
+
+		&:checked {
+			background-color: $light-brown;
+			box-shadow: inset 0 0 0 3px $white;
+		}
+	}
+
+	.gform_footer {
+		padding: 0;
+	}
+
+	.gform_footer button,
+	.gform_button,
+	.gform_next_button,
+	.gform_previous_button {
+		display: inline-block;
+		width: auto;
+		margin: 0;
+		padding: 6px 49px;
+		border: 1px solid $light-brown;
+		border-radius: 3px;
+		background: transparent;
+		color: $black;
+		font-family: $standard-font;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: 0.24px;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		appearance: none;
+		transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease;
+
+		&:hover {
+			background-color: $brown;
+			border-color: $brown;
+			color: $white;
+			opacity: 1;
+		}
+	}
+
+	.gform_ajax_spinner {
+		width: 16px;
+		height: 16px;
+		margin-left: 8px;
+		vertical-align: middle;
+	}
+
+	.gform_confirmation_message,
+	.gform_validation_errors {
+		color: $black;
+		font-size: 16px;
+		line-height: 1.5;
+		margin-bottom: 30px;
+
+		h2,
+		p,
+		ol,
+		li,
+		a {
+			margin: 0;
+			font-size: inherit;
+			font-weight: 400;
+			line-height: inherit;
+			color: $black;
+		}
+
+		ol {
+			margin-top: 8px;
+			padding-left: 18px;
+		}
+	}
+}

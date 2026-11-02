@@ -1,0 +1,85 @@
+/* Two Column Media and Text with CTA */
+
+.two-column-media-and-text-with-cta {
+	margin-top: 90px;
+	margin-bottom: 230px;
+	@include media-breakpoint-down(lg) {
+		margin-top: 48px;
+		margin-bottom: 80px;
+	}
+
+	.row {
+		align-items: stretch;
+	}
+
+	.col-left {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.col-right {
+		margin-top: 40px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 0;
+			padding-top: 75px;
+		}
+	}
+
+	&__large {
+		max-width: 60%;
+	}
+
+	&__small {
+		max-width: 60%;
+		margin-top: 32px;
+		margin-left: auto;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: auto;
+		}
+	}
+
+	&__copy {
+		font-size: 20px;
+		line-height: 1.5;
+
+		p {
+			margin: 0 0 28px;
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			border-top: 1px solid $light-brown;
+
+			li {
+				font-size: 24px;
+				margin: 0;
+				padding: 14px 0;
+				border-bottom: 1px solid $light-brown;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&__large-copy {
+		margin: 64px 0 32px;
+		font-family: $heading-font;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 1.25;
+		color: $brown;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 180px;
+			margin-bottom: 50px;
+			font-size: 40px;
+		}
+	}
+}

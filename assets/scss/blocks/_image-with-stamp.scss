@@ -1,0 +1,23 @@
+/* Image with Stamp */
+
+.image-with-stamp {
+	margin-top: 60px;
+	margin-bottom: 150px;
+
+	.row {
+		@include media-breakpoint-down(lg) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__stamp img {
+		@include media-breakpoint-down(lg) {
+			margin-left: auto;
+			margin-top: 25px;
+		}
+	}
+
+	&__image img {
+		width: 100%;
+	}
+}

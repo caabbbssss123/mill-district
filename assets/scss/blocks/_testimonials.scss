@@ -1,0 +1,58 @@
+/* Testimonials */
+
+.testimonials {
+	margin-top: 150px;
+	margin-bottom: 170px;
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+
+		@include media-breakpoint-up(lg) {
+			flex-direction: row;
+			align-items: stretch;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		padding-right: 45px;
+		padding-left: 45px;
+		border-left: 1px solid $light-brown;
+
+		@include media-breakpoint-down(lg) {
+			padding-top: 28px;
+			padding-bottom: 28px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			flex: 1 1 0;
+			min-width: 0;
+		}
+	}
+
+	&__quote {
+		font-family: $heading-font;
+		margin: 0 0 60px;
+		color: $light-brown;
+		font-size: 30px;
+		line-height: 1.4;
+	}
+
+	&__name {
+		margin: 0;
+		margin-top: auto;
+		font-size: 24px;
+		line-height: 1.25;
+	}
+
+	&__company {
+		margin: 0;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.33;
+		letter-spacing: 0.3px;
+		text-transform: uppercase;
+	}
+}

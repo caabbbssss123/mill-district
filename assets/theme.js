@@ -1,0 +1,10 @@
+import './scss/theme.scss';
+import './js/header';
+import './js/carousel';
+import './js/stats';
+import './js/smooth-scroll';
+import './js/hero-banner';
+import './js/image-banner';
+import './js/content-list';
+import './js/faqs-accordion';
+import './js/global';

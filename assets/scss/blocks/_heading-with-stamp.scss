@@ -1,0 +1,57 @@
+/* Heading with Stamp */
+
+.heading-with-stamp {
+	margin-top: 160px;
+	margin-bottom: 150px;
+
+	@include media-breakpoint-down(lg) {
+		margin-top: 100px;
+		margin-bottom: 90px;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-top: 64px;
+		margin-bottom: 56px;
+	}
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px 48px;
+	}
+
+	&__heading {
+		flex: 1 1 280px;
+		max-width: 540px;
+		margin: 0;
+		font-size: 40px;
+		line-height: 1.25;
+
+		@include media-breakpoint-down(md) {
+			font-size: 28px;
+		}
+
+		br {
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+	}
+
+	&__stamp {
+		flex: 0 0 120px;
+		width: 120px;
+		margin: 0 0 0 auto;
+
+		@include media-breakpoint-down(md) {
+			flex-basis: 88px;
+			width: 88px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}
