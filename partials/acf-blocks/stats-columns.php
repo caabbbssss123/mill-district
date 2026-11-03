@@ -17,7 +17,7 @@ $items    = get_field( 'items' );
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="stats-columns">
 	<div class="container-fluid">
 		<?php if ( $heading ) : ?>
-			<h2 class="stats-columns__heading"><?php echo esc_html( $heading ); ?></h2>
+			<h2 class="stats-columns__heading fadeIn"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
 		<?php
@@ -42,7 +42,7 @@ $items    = get_field( 'items' );
 		?>
 
 		<?php if ( $stat_total ) : ?>
-			<div class="stats-columns__items">
+			<div class="stats-columns__items staggerUp">
 				<?php foreach ( $stat_items as $index => $item ) : ?>
 					<?php
 					$prefix = isset( $item['prefix'] ) ? $item['prefix'] : '';

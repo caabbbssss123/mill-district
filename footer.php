@@ -12,14 +12,14 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 
 <footer id="footer" class="<?php echo esc_attr( $footer_classes ); ?>">
 	<div class="container-fluid">
-		<div class="footer__logo-small">
+		<div class="footer__logo-small fadeIn">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>">
 				<?php get_template_part( 'assets/img/svg/footer-logo-small' ); ?>
 			</a>
 		</div>
 
 		<div class="row footer__columns">
-			<div class="col-12 col-lg-3 col-left">
+			<div class="col-12 col-lg-3 col-left fadeInLeft">
 				<?php
 				$footer_copy = get_field( 'footer_copy', 'options' );
 
@@ -33,7 +33,7 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 				?>
 			</div>
 
-			<div class="col-12 col-lg-3 col-middle">
+			<div class="col-12 col-lg-3 col-middle fadeInUp delayShort">
 				<nav class="footer__menus" aria-label="<?php echo esc_attr_x( 'Footer', 'footer', 'the-mill-district' ); ?>">
 					<?php
 					wp_nav_menu(
@@ -79,7 +79,7 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 			</div>
 
 			<?php if ( ! $has_contact_section ) : ?>
-				<div class="col-12 col-lg-6 footer__form-column">
+				<div class="col-12 col-lg-6 footer__form-column fadeInRight">
 					<?php
 					$footer_form_heading     = get_field( 'footer_form_heading', 'options' );
 					$gravity_form_shortcode  = get_field( 'gravity_form_shortcode', 'options' );
@@ -109,7 +109,7 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 			<?php endif; ?>
 		</div>
 
-		<div class="footer__meta">
+		<div class="footer__meta fadeIn">
 			<p class="footer__copyright">&copy; The Mill District <?php echo esc_html( wp_date( 'Y' ) ); ?></p>
 			<p class="footer__credit">
 				<?php echo esc_html_x( 'Website by', 'footer', 'the-mill-district' ); ?>
@@ -117,7 +117,7 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 			</p>
 		</div>
 
-		<div class="footer__logo-large">
+		<div class="footer__logo-large slideInUp">
 			<a href="<?php bloginfo('url') ?>">
 				<?php get_template_part( 'assets/img/svg/footer-logo-large' ); ?>
 			</a>

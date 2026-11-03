@@ -39,7 +39,7 @@ foreach ( $items as $index => $item ) {
 					continue;
 				}
 
-				$item_class = 'content-list__item';
+				$item_class = 'content-list__item fadeInUp';
 
 				if ( $active_index === $index ) {
 					$item_class .= ' is-active';

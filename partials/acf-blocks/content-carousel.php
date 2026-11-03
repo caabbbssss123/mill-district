@@ -17,11 +17,11 @@ $items    = get_field( 'items' );
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="content-carousel">
 	<div class="container-fluid">
 		<?php if ( $heading ) : ?>
-			<h2 class="content-carousel__heading"><?php echo esc_html( $heading ); ?></h2>
+			<h2 class="content-carousel__heading fadeInLeft"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
 		<?php if ( $items ) : ?>
-			<div class="swiper content-carousel__slider js-content-carousel">
+			<div class="swiper content-carousel__slider js-content-carousel fadeIn delayShort">
 				<div class="swiper-wrapper">
 					<?php foreach ( $items as $item ) : ?>
 						<?php
@@ -50,7 +50,7 @@ $items    = get_field( 'items' );
 				</div>
 			</div>
 
-			<div class="content-carousel__pagination swiper-pagination"></div>
+			<div class="content-carousel__pagination swiper-pagination fadeIn delayShort"></div>
 		<?php endif; ?>
 	</div>
 </section>

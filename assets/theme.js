@@ -8,3 +8,4 @@ import './js/image-banner';
 import './js/content-list';
 import './js/faqs-accordion';
 import './js/global';
+import './js/gsap';

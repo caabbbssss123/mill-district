@@ -22,13 +22,13 @@ $cta_link    = get_field( 'cta_link' );
 		<div class="row">
 			<div class="col-lg-5 col-left">
 				<?php if ( $large_image ) : ?>
-					<figure class="two-column-media-and-text-with-cta__large">
+					<figure class="two-column-media-and-text-with-cta__large slideInLeft">
 						<?php echo wp_get_attachment_image( $large_image, 'large' ); ?>
 					</figure>
 				<?php endif; ?>
 
 				<?php if ( $small_image ) : ?>
-					<figure class="two-column-media-and-text-with-cta__small">
+					<figure class="two-column-media-and-text-with-cta__small fadeInUp delayShort">
 						<?php echo wp_get_attachment_image( $small_image, 'medium' ); ?>
 					</figure>
 				<?php endif; ?>
@@ -36,13 +36,13 @@ $cta_link    = get_field( 'cta_link' );
 
 			<div class="col-lg-5 col-lg-offset-1 col-right">
 				<?php if ( $copy ) : ?>
-					<div class="two-column-media-and-text-with-cta__copy">
+					<div class="two-column-media-and-text-with-cta__copy fadeInRight">
 						<?php echo wp_kses_post( $copy ); ?>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( $large_copy ) : ?>
-					<p class="two-column-media-and-text-with-cta__large-copy"><?php echo nl2br( esc_html( $large_copy ) ); ?></p>
+					<p class="two-column-media-and-text-with-cta__large-copy fadeInUp"><?php echo nl2br( esc_html( $large_copy ) ); ?></p>
 				<?php endif; ?>
 
 				<?php
@@ -54,7 +54,7 @@ $cta_link    = get_field( 'cta_link' );
 							'url'    => $cta_link['url'],
 							'title'  => isset( $cta_link['title'] ) ? $cta_link['title'] : '',
 							'target' => isset( $cta_link['target'] ) ? $cta_link['target'] : '',
-							'class'  => 'btn-primary',
+							'class'  => 'btn-primary fadeInUp delayShort',
 						)
 					);
 				}

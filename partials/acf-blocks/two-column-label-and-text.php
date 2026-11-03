@@ -20,13 +20,13 @@ $copy     = get_field( 'copy' );
 			<div class="row">
 				<div class="col-md-4">
 					<?php if ( $label ) : ?>
-						<p class="two-column-label-and-text__label"><?php echo esc_html( $label ); ?></p>
+						<p class="two-column-label-and-text__label fadeInLeft"><?php echo esc_html( $label ); ?></p>
 					<?php endif; ?>
 				</div>
 
 				<div class="col-md-7">
 					<?php if ( $copy ) : ?>
-						<div class="two-column-label-and-text__copy">
+						<div class="two-column-label-and-text__copy fadeInRight">
 							<?php echo wpautop( esc_html( $copy ) ); ?>
 						</div>
 					<?php endif; ?>

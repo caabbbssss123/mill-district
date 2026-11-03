@@ -20,7 +20,7 @@ $stamp_id = is_array( $stamp ) ? ( $stamp['ID'] ?? 0 ) : $stamp;
 		<div class="row">
 			<div class="col-lg-4">
 				<?php if ( $stamp_id ) : ?>
-					<figure class="image-with-stamp__stamp">
+					<figure class="image-with-stamp__stamp fadeInDown delayShort">
 						<?php echo wp_get_attachment_image( $stamp_id, 'medium' ); ?>
 					</figure>
 				<?php endif; ?>
@@ -28,7 +28,7 @@ $stamp_id = is_array( $stamp ) ? ( $stamp['ID'] ?? 0 ) : $stamp;
 
 			<div class="col-lg-7">
 				<?php if ( $image ) : ?>
-					<figure class="image-with-stamp__image">
+					<figure class="image-with-stamp__image slideInRight">
 						<?php echo wp_get_attachment_image( $image, 'full' ); ?>
 					</figure>
 				<?php endif; ?>

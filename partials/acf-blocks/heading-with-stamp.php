@@ -18,11 +18,11 @@ $stamp    = get_field( 'stamp' );
 	<div class="container-fluid">
 		<div class="heading-with-stamp__inner">
 			<?php if ( $heading ) : ?>
-				<h2 class="heading-with-stamp__heading"><?php echo $heading; ?></h2>
+				<h2 class="heading-with-stamp__heading fadeInLeft"><?php echo $heading; ?></h2>
 			<?php endif; ?>
 
 			<?php if ( $stamp ) : ?>
-				<figure class="heading-with-stamp__stamp">
+				<figure class="heading-with-stamp__stamp scaleIn delayShort">
 					<?php echo wp_get_attachment_image( $stamp, 'medium' ); ?>
 				</figure>
 			<?php endif; ?>

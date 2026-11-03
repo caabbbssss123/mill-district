@@ -18,7 +18,7 @@ $image_alt = $image ? get_post_meta( $image, '_wp_attachment_image_alt', true ) 
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="image-banner">
 	<div class="container-fluid">
 		<?php if ( $image_src ) : ?>
-			<div class="image-banner__media">
+			<div class="image-banner__media fadeIn">
 				<img class="image-banner__image" src="<?php echo esc_url( $image_src[0] ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>">
 			</div>
 		<?php endif; ?>

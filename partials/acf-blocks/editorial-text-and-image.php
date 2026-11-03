@@ -18,11 +18,17 @@ $image_position = get_field( 'image_position' );
 
 $classes      = 'editorial-text-and-image';
 $text_classes = 'col-lg-5 editorial-text-and-image__text';
+$text_motion  = 'fadeInLeft';
+$media_motion = 'slideInRight';
 
 if ( 'left' === $image_position ) {
 	$classes      .= ' editorial-text-and-image--image-left';
 	$text_classes .= ' col-lg-offset-1';
+	$text_motion   = 'fadeInRight';
+	$media_motion  = 'slideInLeft';
 }
+
+$text_classes .= ' ' . $text_motion;
 
 ?>
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
@@ -55,7 +61,7 @@ if ( 'left' === $image_position ) {
 				?>
 			</div>
 
-			<div class="col-lg-6 editorial-text-and-image__media">
+			<div class="col-lg-6 editorial-text-and-image__media <?php echo esc_attr( $media_motion ); ?>">
 				<?php if ( $image ) : ?>
 					<figure class="editorial-text-and-image__image">
 						<?php echo wp_get_attachment_image( $image, 'full' ); ?>

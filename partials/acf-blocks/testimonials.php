@@ -20,7 +20,7 @@ if ( ! is_array( $items ) ) {
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="testimonials">
 	<div class="container-fluid">
 		<?php if ( $items ) : ?>
-			<div class="testimonials__items">
+			<div class="testimonials__items staggerUp">
 				<?php foreach ( $items as $item ) : ?>
 					<?php
 					$testimonial = isset( $item['testimonial'] ) ? $item['testimonial'] : '';

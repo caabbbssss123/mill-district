@@ -21,20 +21,20 @@ $stamp_image = get_field( 'stamp_image' );
 		<div class="row">
 			<div class="col col-left">
 				<?php if ( $copy ) : ?>
-					<div class="two-column-media__copy">
+					<div class="two-column-media__copy fadeInLeft">
 						<?php echo nl2br( esc_html( $copy ) ); ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( $small_image || $stamp_image ) : ?>
 					<div class="two-column-media__aside">
 						<?php if ( $small_image ) : ?>
-							<figure class="two-column-media__small">
+							<figure class="two-column-media__small fadeInUp">
 								<?php echo wp_get_attachment_image( $small_image, 'large' ); ?>
 							</figure>
 						<?php endif; ?>
 
 						<?php if ( $stamp_image ) : ?>
-							<figure class="two-column-media__stamp">
+							<figure class="two-column-media__stamp scaleIn delayShort">
 								<?php echo wp_get_attachment_image( $stamp_image, 'medium' ); ?>
 							</figure>
 						<?php endif; ?>
@@ -43,7 +43,7 @@ $stamp_image = get_field( 'stamp_image' );
 			</div>
 			<div class="col-lg-6 col-right">
 				<?php if ( $large_image ) : ?>
-					<figure class="two-column-media__feature">
+					<figure class="two-column-media__feature slideInRight">
 						<?php echo wp_get_attachment_image( $large_image, 'large' ); ?>
 					</figure>
 				<?php endif; ?>

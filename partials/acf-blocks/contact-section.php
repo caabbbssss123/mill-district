@@ -23,29 +23,29 @@ $image                  = get_field( 'image' );
 			<div class="row">
 				<div class="col-lg-4">
 					<?php if ( $heading ) : ?>
-						<h2 class="contact-section__heading"><?php echo esc_html( $heading ); ?></h2>
+						<h2 class="contact-section__heading fadeInLeft"><?php echo esc_html( $heading ); ?></h2>
 					<?php endif; ?>
 				</div>
 
 				<div class="col-lg-5">
 					<?php if ( $form_heading ) : ?>
-						<p class="contact-section__form-heading"><?php echo esc_html( $form_heading ); ?></p>
+						<p class="contact-section__form-heading fadeInUp"><?php echo esc_html( $form_heading ); ?></p>
 					<?php endif; ?>
 
 					<?php if ( $gravity_form_shortcode ) : ?>
-						<div class="contact-section__form" id="register">
+						<div class="contact-section__form fadeInUp delayShort" id="register">
 							<?php echo do_shortcode( $gravity_form_shortcode ); ?>
 						</div>
 					<?php endif; ?>
 
 					<?php if ( $form_description ) : ?>
-						<p class="contact-section__form-description"><?php echo esc_html( $form_description ); ?></p>
+						<p class="contact-section__form-description fadeIn delayShort"><?php echo esc_html( $form_description ); ?></p>
 					<?php endif; ?>
 				</div>
 
 				<div class="col-lg-3">
 					<?php if ( $image ) : ?>
-						<figure class="contact-section__image">
+						<figure class="contact-section__image slideInRight">
 							<?php echo wp_get_attachment_image( $image, 'full' ); ?>
 						</figure>
 					<?php endif; ?>

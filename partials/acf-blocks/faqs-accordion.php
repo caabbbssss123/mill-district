@@ -24,7 +24,7 @@ if ( ! is_array( $items ) ) {
 			<div class="row">
 				<div class="col-md-4">
 					<?php if ( $heading ) : ?>
-						<h2 class="faqs-accordion__heading"><?php echo esc_html( $heading ); ?></h2>
+						<h2 class="faqs-accordion__heading fadeIn"><?php echo esc_html( $heading ); ?></h2>
 					<?php endif; ?>
 				</div>
 
@@ -42,7 +42,7 @@ if ( ! is_array( $items ) ) {
 
 								$answer_id = $block_id . '-faq-' . $index;
 								?>
-								<div class="faqs-accordion__item">
+								<div class="faqs-accordion__item fadeInUp">
 									<button
 										type="button"
 										class="faqs-accordion__question"

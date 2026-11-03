@@ -18,17 +18,17 @@ $ctas     = get_field( 'ctas' );
 <section id="row-<?php echo esc_attr( $block_id ); ?>" class="centered-content-with-cta">
 	<div class="container-fluid">
 		<?php if ( $heading ) : ?>
-			<h2 class="centered-content-with-cta__heading"><?php echo esc_html( $heading ); ?></h2>
+			<h2 class="centered-content-with-cta__heading fadeInUp"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
 		<?php if ( $copy ) : ?>
-			<div class="centered-content-with-cta__copy">
+			<div class="centered-content-with-cta__copy fadeIn delayShort">
 				<?php echo wpautop( esc_html( $copy ) ); ?>
 			</div>
 		<?php endif; ?>
 
 		<?php if ( $ctas ) : ?>
-			<div class="centered-content-with-cta__ctas">
+			<div class="centered-content-with-cta__ctas fadeInUp delayShort">
 				<?php
 				foreach ( $ctas as $cta ) {
 					$link = isset( $cta['link'] ) ? $cta['link'] : null;

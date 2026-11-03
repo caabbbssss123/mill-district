@@ -21,18 +21,18 @@ $stamp    = get_field( 'stamp' );
 		<div class="row">
 			<div class="col col-left">
 				<?php if ( $heading ) : ?>
-					<h2 class="split-text-and-image__heading"><?php echo esc_html( $heading ); ?></h2>
+					<h2 class="split-text-and-image__heading fadeInLeft"><?php echo esc_html( $heading ); ?></h2>
 				<?php endif; ?>
 
 				<?php if ( $copy ) : ?>
-					<div class="split-text-and-image__copy">
+					<div class="split-text-and-image__copy fadeInUp delayShort">
 						<?php echo wpautop( esc_html( $copy ) ); ?>
 					</div>
 				<?php endif; ?>
 			</div>
 
 			<div class="col-lg-6 col-right">
-				<div class="split-text-and-image__media">
+				<div class="split-text-and-image__media slideInRight">
 					<div class="split-text-and-image__frame">
 							<div class="split-text-and-image__image">
 								<?php echo wp_get_attachment_image( $image, 'full' ); ?>
