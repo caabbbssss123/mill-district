@@ -2,7 +2,11 @@
 
 .two-column-label-and-text {
 	margin-top: 45px;
-	margin-bottom: 65px;
+	margin-bottom: 85px;
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 45px;
+	}
 
 	&__inner {
 		padding-top: 25px;
