@@ -4,11 +4,21 @@
    Enqueue CSS and JS
    ========================================================================== */
 
+function mill_district_asset_version( $relative_path ) {
+	$path = get_template_directory() . $relative_path;
+
+	if ( file_exists( $path ) ) {
+		return (string) filemtime( $path );
+	}
+
+	return '1';
+}
+
 // ENQUEUE STYLES  
 function enqueue_styles() {  
 
 	/** REGISTER foundation **/  
-	wp_register_style( 'foundation', THEME_DIR . '/assets/css/foundation.xy.css', array(), '1', 'all' );  
+	wp_register_style( 'foundation', THEME_DIR . '/assets/css/foundation.xy.css', array(), mill_district_asset_version( '/assets/css/foundation.xy.css' ), 'all' );  
 	wp_enqueue_style( 'foundation' );
 
 	/** REGISTER Fonts **/  
@@ -20,15 +30,15 @@ function enqueue_styles() {
 	wp_enqueue_style( 'swiper' );	
 
 	/** REGISTER app **/  
-	wp_register_style( 'app', THEME_DIR . '/assets/css/app.css', array(), '1', 'all' );  
+	wp_register_style( 'app', THEME_DIR . '/assets/css/app.css', array(), mill_district_asset_version( '/assets/css/app.css' ), 'all' );  
 	// wp_enqueue_style( 'app' );
 	
 	/** REGISTER colour-variations **/  
-	wp_register_style( 'colour-variations', THEME_DIR . '/assets/css/colour-variations.css', array(), '1', 'all' );  
+	wp_register_style( 'colour-variations', THEME_DIR . '/assets/css/colour-variations.css', array(), mill_district_asset_version( '/assets/css/colour-variations.css' ), 'all' );  
 	wp_enqueue_style( 'colour-variations' );
 
 	/** REGISTER theme **/  
-	wp_register_style( 'theme', THEME_DIR . '/assets/css/theme.css', array( 'google-fonts' ), '1', 'all' );  
+	wp_register_style( 'theme', THEME_DIR . '/assets/css/theme.css', array( 'google-fonts' ), mill_district_asset_version( '/assets/css/theme.css' ), 'all' );  
 	wp_enqueue_style( 'theme' );
 
 }  
@@ -94,15 +104,15 @@ function enqueue_scripts() {
 	wp_enqueue_script( 'swiper' );
 	
 	/** REGISTER plugins **/  
-	wp_register_script( 'plugins', THEME_DIR . '/assets/js/plugins.js', array('jquery'), '1', true );  
+	wp_register_script( 'plugins', THEME_DIR . '/assets/js/plugins.js', array('jquery'), mill_district_asset_version( '/assets/js/plugins.js' ), true );  
 	wp_enqueue_script( 'plugins' );
 
 	/** REGISTER app **/  
-	wp_register_script( 'app', THEME_DIR . '/assets/js/app.js', array('jquery'), '1', true );  
+	wp_register_script( 'app', THEME_DIR . '/assets/js/app.js', array('jquery'), mill_district_asset_version( '/assets/js/app.js' ), true );  
 	wp_enqueue_script( 'app' );
 
 	/** REGISTER theme **/  
-	wp_register_script( 'theme', THEME_DIR . '/assets/js/theme.js', array('jquery'), '1', true );  
+	wp_register_script( 'theme', THEME_DIR . '/assets/js/theme.js', array('jquery'), mill_district_asset_version( '/assets/js/theme.js' ), true );  
 	wp_enqueue_script( 'theme' );
 	
 	$translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
