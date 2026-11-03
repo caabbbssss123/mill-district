@@ -86,3 +86,12 @@ body.has-smooth-scroll.admin-bar .menu-backdrop {
 .pin-spacer:has(#main-header) {
 	z-index: 100;
 }
+
+.aligncenter {
+	text-align: center;
+
+	img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
