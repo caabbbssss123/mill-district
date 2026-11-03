@@ -20,18 +20,35 @@ $items    = get_field( 'items' );
 			<h2 class="stats-columns__heading"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 
-		<?php if ( $items ) : ?>
+		<?php
+		$stat_items = array();
+
+		if ( $items ) {
+			foreach ( $items as $item ) {
+				$prefix = isset( $item['prefix'] ) ? $item['prefix'] : '';
+				$suffix = isset( $item['suffix'] ) ? $item['suffix'] : '';
+				$number = isset( $item['number'] ) ? $item['number'] : '';
+				$copy   = isset( $item['copy'] ) ? $item['copy'] : '';
+
+				if ( $prefix === '' && $suffix === '' && $number === '' && $copy === '' ) {
+					continue;
+				}
+
+				$stat_items[] = $item;
+			}
+		}
+
+		$stat_total = count( $stat_items );
+		?>
+
+		<?php if ( $stat_total ) : ?>
 			<div class="stats-columns__items">
-				<?php foreach ( $items as $item ) : ?>
+				<?php foreach ( $stat_items as $index => $item ) : ?>
 					<?php
 					$prefix = isset( $item['prefix'] ) ? $item['prefix'] : '';
 					$suffix = isset( $item['suffix'] ) ? $item['suffix'] : '';
 					$number = isset( $item['number'] ) ? $item['number'] : '';
 					$copy   = isset( $item['copy'] ) ? $item['copy'] : '';
-
-					if ( $prefix === '' && $suffix === '' && $number === '' && $copy === '' ) {
-						continue;
-					}
 					?>
 					<div class="stats-columns__item">
 						<?php if ( $prefix !== '' || $number !== '' || $suffix !== '' ) : ?>

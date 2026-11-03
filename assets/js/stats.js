@@ -39,16 +39,29 @@ const countStat = (element) => {
 		return;
 	}
 
-	const state = { value: 0 };
+	const finalText = formatStat(parsed.value, parsed.decimals, parsed.grouped);
 
-	element.textContent = formatStat(0, parsed.decimals, parsed.grouped);
+	// Keep the finished number in normal flow so the column width never
+	// changes. Only the overlay updates while the value counts up.
+	const sizer = document.createElement('span');
+	sizer.className = 'stats-columns__number-sizer';
+	sizer.setAttribute('aria-hidden', 'true');
+	sizer.textContent = finalText;
+
+	const value = document.createElement('span');
+	value.className = 'stats-columns__number-value';
+	value.textContent = formatStat(0, parsed.decimals, parsed.grouped);
+
+	element.replaceChildren(sizer, value);
+
+	const state = { value: 0 };
 
 	gsap.to(state, {
 		value: parsed.value,
 		duration: 1.8,
 		ease: 'power2.out',
 		onUpdate: () => {
-			element.textContent = formatStat(state.value, parsed.decimals, parsed.grouped);
+			value.textContent = formatStat(state.value, parsed.decimals, parsed.grouped);
 		},
 	});
 };
