@@ -1,16 +1,5 @@
 <?php
 
-add_filter( 'register_block_type_args', 'mill_district_remove_default_blocks', 10, 2 );
-function mill_district_remove_default_blocks( array $args, string $block_type ) {
-
-	if (is_admin()) {
-		return [];
-	}
-
-	return $args;
-}
-
-
 add_filter( 'block_categories_all', 'mill_district_block_category', 10, 2);
 function mill_district_block_category( $categories, $post ) {
 	
