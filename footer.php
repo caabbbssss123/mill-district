@@ -19,7 +19,7 @@ $footer_classes      = 'footer' . ( $has_contact_section ? ' footer--contact' : 
 		</div>
 
 		<div class="row footer__columns">
-			<div class="col-12 col-left">
+			<div class="col-12 col-lg-3 col-left">
 				<?php
 				$footer_copy = get_field( 'footer_copy', 'options' );
 
